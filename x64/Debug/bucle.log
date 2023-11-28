@@ -1,0 +1,5 @@
+﻿  Game.cpp
+D:\Projects\bucle\game\Game.cpp(18,52): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(21,61): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(24,68): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+  bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe
