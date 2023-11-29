@@ -4,6 +4,7 @@
 class Crosshair {
 public:
     sf::Sprite sprite;
-    Crosshair(const sf::Texture& texture);
-    void updatePosition(const sf::RenderWindow& window);
+    sf::Sprite sprite2;
+    Crosshair(const sf::Texture& texture, const sf::Texture& texture2);
+    void updatePosition(const sf::RenderWindow& window, float elapsedTime);
 };

@@ -1,5 +1,42 @@
-﻿  Game.cpp
-D:\Projects\bucle\game\Game.cpp(18,52): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(21,61): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(24,68): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+﻿  Crosshair.cpp
+D:\Projects\bucle\classes\Crosshair.cpp(11,49): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(11,34): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(12,44): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(12,31): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(17,44): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(17,32): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(18,45): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+D:\Projects\bucle\classes\Crosshair.cpp(18,33): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
   bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe
