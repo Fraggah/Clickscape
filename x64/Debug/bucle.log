@@ -1,5 +1,22 @@
-﻿  Game.cpp
-D:\Projects\bucle\game\Game.cpp(20,51): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(23,59): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(26,60): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+﻿  Agent.cpp
+D:\Projects\bucle\classes\Agent.cpp(16,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Projects\bucle\classes\Agent.cpp(16,38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Projects\bucle\classes\Agent.cpp(22,67): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\classes\Agent.cpp(22,55): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
   bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe

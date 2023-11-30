@@ -6,6 +6,7 @@ class Agent
 public:
     sf::Sprite sprite;
     Agent(const sf::Texture& texture);
+    ~Agent();
     void spawn();
     bool handleClick(const sf::Event& event, const sf::RenderWindow& window);
     sf::Vector2f getPosition() const;

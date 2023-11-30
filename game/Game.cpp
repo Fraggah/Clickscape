@@ -17,7 +17,7 @@ Game::~Game() {
 void Game::run() {
     //Start
     sf::Texture textureA;
-    if (!textureA.loadFromFile("./assets/et.png"));
+    if (!textureA.loadFromFile("./assets/enemy.png"));
 
     sf::Texture textureMira;
     if (!textureMira.loadFromFile("./assets/player1.png"));
