@@ -134,11 +134,13 @@
     <ClCompile Include="classes\Crosshair.cpp" />
     <ClCompile Include="game\Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="classes\ParticleSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes\Agent.h" />
     <ClInclude Include="classes\Crosshair.h" />
     <ClInclude Include="game\Game.h" />
+    <ClInclude Include="classes\ParticleSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

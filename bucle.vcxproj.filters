@@ -27,6 +27,9 @@
     <ClCompile Include="classes\Crosshair.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="classes\ParticleSystem.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game\Game.h">
@@ -36,6 +39,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="classes\Crosshair.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\ParticleSystem.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,7 +19,7 @@ void Crosshair::updatePosition(const sf::RenderWindow& window, float elapsedTime
 
     // Hacer que sprite2 rote constantemente
     float rotationSpeed1 = 0.3f; // Ajusta esto para cambiar la velocidad de rotación
-    float rotationSpeed2 = 0.4f; // Ajusta esto para cambiar la velocidad de rotación
+    float rotationSpeed2 = 0.3f; // Ajusta esto para cambiar la velocidad de rotación
     float direction = sin(elapsedTime); // Cambia la dirección de la rotación con el tiempo
     sprite.rotate(rotationSpeed1);
     sprite2.rotate(rotationSpeed2 * direction * elapsedTime);
