@@ -1,42 +1,22 @@
-﻿  Crosshair.cpp
-D:\Projects\bucle\classes\Crosshair.cpp(11,49): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\classes\Crosshair.cpp(11,34): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\classes\Crosshair.cpp(12,44): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\classes\Crosshair.cpp(12,31): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\classes\Crosshair.cpp(17,44): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+﻿  Agent.cpp
+D:\Projects\bucle\classes\Agent.cpp(16,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Projects\bucle\classes\Agent.cpp(16,38): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Projects\bucle\classes\Agent.cpp(22,67): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=int
           ]
-D:\Projects\bucle\classes\Crosshair.cpp(17,32): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\classes\Agent.cpp(22,55): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=int
           ]
-D:\Projects\bucle\classes\Crosshair.cpp(18,45): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
+          and
           [
-              T=int
-          ]
-D:\Projects\bucle\classes\Crosshair.cpp(18,33): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=int
+              T=float
           ]
   bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe
