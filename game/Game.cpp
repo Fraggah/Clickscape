@@ -1,10 +1,10 @@
 #include "Game.h"
+#include "Level.h"
 #include "../classes/ParticleSystem.h"
 #include "../classes/Crosshair.h"
 #include "../classes/Agent.h"
 #include <SFML/Audio.hpp>
 #include "SFML/Graphics.hpp"
-#include <vector>
 #include <iostream>
 
 Game::Game() : window(sf::VideoMode(1920, 1080), "Game") {
@@ -39,9 +39,6 @@ void Game::run() {
     smenu.setPosition((window.getSize().x) / 2, (window.getSize().y) / 2);
     smenu2.setPosition(((window.getSize().x) / 2)-20, ((window.getSize().y) / 2)-22);
 
-    sf::Texture textureA;
-    if (!textureA.loadFromFile("./assets/enemy.png"));
-
     sf::Texture textureMira;
     if (!textureMira.loadFromFile("./assets/player1.png"));
 
@@ -65,7 +62,11 @@ void Game::run() {
     sf::Clock cflash;
     sf::Time flashtime = sf::seconds(37.5);
 
-    Agent agent(textureA);
+    sf::Clock spawn;
+    sf::Time spawnTime = sf::seconds(2);
+
+    Level level;
+
     Crosshair crosshair(textureMira, textureMira2);
     sf::Clock clock;
     int puntos = 0;
@@ -117,12 +118,12 @@ void Game::run() {
             particleSystem.emitParticles(mousePos, particleSystem.randomColor());
             particleSystem.update();
 
-            if (agent.handleClick(event, window)) {
-                puntos++;
-                if (puntos >= 5)
-                    window.close();
+            if (spawn.getElapsedTime() > spawnTime) {
+                level.createAgent();
+                spawn.restart();
             }
             crosshair.updatePosition(window, elapsed.asSeconds());
+            level.deleteAgent(event, window);
         }
 
 
@@ -143,7 +144,7 @@ void Game::run() {
             }
             if (isgame) {
                 particleSystem.draw(window);
-                window.draw(agent.sprite);
+                level.draw(window);
                 window.draw(crosshair.sprite2);
                 window.draw(crosshair.sprite);
             }
