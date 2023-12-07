@@ -3,9 +3,9 @@
 
 Crosshair::Crosshair(const sf::Texture& texture, const sf::Texture& texture2) {
     sprite.setTexture(texture);
-    sprite.setScale(0.4f, 0.4f);
+    sprite.setScale(0.3f, 0.3f);
     sprite2.setTexture(texture2);
-    sprite2.setScale(0.4f, 0.4f);
+    sprite2.setScale(0.3f, 0.3f);
     sf::Vector2u size = texture.getSize();
     sf::Vector2u size2 = texture2.getSize();
     sprite.setOrigin((size.x / 2)+5,(size.y / 2)+5);

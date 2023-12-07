@@ -1,15 +1,5 @@
 ﻿  Game.cpp
-D:\Projects\bucle\game\Game.cpp(35,52): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\game\Game.cpp(35,34): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\bucle\game\Game.cpp(36,46): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(36,50): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
@@ -19,27 +9,37 @@ D:\Projects\bucle\game\Game.cpp(36,31): warning C4244: 'argumento': conversión 
           [
               T=unsigned int
           ]
-D:\Projects\bucle\game\Game.cpp(39,70): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(37,43): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-D:\Projects\bucle\game\Game.cpp(39,44): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(37,28): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-D:\Projects\bucle\game\Game.cpp(40,81): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(40,67): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-D:\Projects\bucle\game\Game.cpp(40,50): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(40,41): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-D:\Projects\bucle\game\Game.cpp(93,96): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(41,81): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(41,48): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(97,90): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=unsigned int
@@ -48,7 +48,7 @@ D:\Projects\bucle\game\Game.cpp(93,96): warning C4244: 'argumento': conversión 
           [
               T=float
           ]
-D:\Projects\bucle\game\Game.cpp(93,76): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(97,70): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=unsigned int
@@ -57,7 +57,7 @@ D:\Projects\bucle\game\Game.cpp(93,76): warning C4244: 'argumento': conversión 
           [
               T=float
           ]
-D:\Projects\bucle\game\Game.cpp(97,74): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(101,62): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=int
@@ -66,7 +66,7 @@ D:\Projects\bucle\game\Game.cpp(97,74): warning C4244: 'argumento': conversión 
           [
               T=float
           ]
-D:\Projects\bucle\game\Game.cpp(97,62): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+D:\Projects\bucle\game\Game.cpp(101,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
           with
           [
               T=int
@@ -75,10 +75,11 @@ D:\Projects\bucle\game\Game.cpp(97,62): warning C4244: 'argumento': conversión 
           [
               T=float
           ]
-D:\Projects\bucle\game\Game.cpp(21,51): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(25,53): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(28,54): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(43,59): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(46,60): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-D:\Projects\bucle\game\Game.cpp(97,78): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(22,48): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(26,50): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(29,51): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(44,56): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(47,57): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(67,52): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(101,66): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
   bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe

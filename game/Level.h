@@ -8,6 +8,7 @@ class Level
 {
 public:
 	int points = 0;
+	int lifes = 10;
 	sf::Texture textureA;
 	sf::Texture textureE;
 	sf::Time del = sf::seconds(2);
@@ -19,6 +20,6 @@ public:
 	void deleteAgent(const sf::Event& event, const sf::RenderWindow& window);
 	void draw(sf::RenderWindow& window);
 private:
-	std::vector<Agent> agents;
+	std::vector<Agent*> agents;
 };
 

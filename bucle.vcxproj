@@ -136,6 +136,7 @@
     <ClCompile Include="classes\Enemy.cpp" />
     <ClCompile Include="game\Game.cpp" />
     <ClCompile Include="game\Level.cpp" />
+    <ClCompile Include="game\Interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="classes\ParticleSystem.cpp" />
     <ClCompile Include="game\Menu.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="classes\ParticleSystem.h" />
     <ClInclude Include="game\Menu.h" />
     <ClInclude Include="game\Level.h" />
+    <ClInclude Include="game\Interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

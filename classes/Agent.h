@@ -27,6 +27,8 @@ public:
     virtual ~Agent();
     virtual void setTexture(sf::Texture& texture);
     void setPositions();
+    virtual void eraseTimeAction(int lifes);
+    virtual int clickAction();
 };
 
 #endif 

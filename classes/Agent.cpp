@@ -1,4 +1,5 @@
 #include "Agent.h"
+#include <iostream>
 
 Agent::Agent() {
     std::srand(static_cast<unsigned>(std::time(0)));
@@ -30,4 +31,13 @@ void Agent::setPositions() {
 
     sf::Vector2f positionVector(positions[randomIndex].posx, positions[randomIndex].posy);
     sprite.setPosition(positionVector);
+}
+
+void Agent::eraseTimeAction(int lifes) {
+    //nada?
+}
+
+int Agent::clickAction() {
+    std::cout << "Agent";
+    return 0;
 }
