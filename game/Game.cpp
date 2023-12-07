@@ -62,14 +62,11 @@ void Game::run() {
     sf::Clock cflash;
     sf::Time flashtime = sf::seconds(37.5);
 
-    sf::Clock spawn;
-    sf::Time spawnTime = sf::seconds(2);
 
     Level level;
 
     Crosshair crosshair(textureMira, textureMira2);
     sf::Clock clock;
-    int puntos = 0;
 
     ParticleSystem particleSystem;
 
@@ -117,13 +114,21 @@ void Game::run() {
             sf::Vector2i mousePos = sf::Mouse::getPosition(window);
             particleSystem.emitParticles(mousePos, particleSystem.randomColor());
             particleSystem.update();
-
-            if (spawn.getElapsedTime() > spawnTime) {
-                level.createAgent();
-                spawn.restart();
-            }
+         
+                if (spawn.getElapsedTime() > spawnTime) {
+                    int randomValue = std::rand() % 2;
+                    if (randomValue == 0) {
+                        level.createAllied();
+                    }
+                    else {
+                        level.createEnemy();
+                    }
+                    spawn.restart();
+                }
+            
             crosshair.updatePosition(window, elapsed.asSeconds());
             level.deleteAgent(event, window);
+            level.deleteAtTime();
         }
 
 
