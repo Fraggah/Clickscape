@@ -1,36 +1,44 @@
 #include "Agent.h"
+#include <iostream>
 
-#include <cstdlib>
-
-Agent::Agent(const sf::Texture& texture) {
-    sprite.setTexture(texture);
-    sprite.setScale(0.7f, 0.7f);
+Agent::Agent() {
+    std::srand(static_cast<unsigned>(std::time(0)));
+    usedIndex.clear();
+    randomIndex = std::rand() % positions.size();
+    usedIndex.insert(randomIndex);
 }
 
 Agent::~Agent() {
-
 }
 
-void Agent::spawn() {
-    lastSpawnPosition = sprite.getPosition();  // Almacena la posición actual antes de cambiarla
-    sprite.setPosition(rand() % 1800 + 50, rand() % 950 + 50);
+void Agent::setTexture(sf::Texture& texture) {
+    sprite.setTexture(texture);
 }
 
-bool Agent::handleClick(const sf::Event& event, const sf::RenderWindow& window) {
-    if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-        if (sprite.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
-            spawn();
-            return true;
-        }
+void Agent::setPositions() {
+    if (usedIndex.size() < positions.size() - 1) {
+        int newRandomIndex;
+        do {
+            newRandomIndex = std::rand() % positions.size();
+        } while (usedIndex.count(newRandomIndex) > 0);
+
+        usedIndex.insert(newRandomIndex);
+        randomIndex = newRandomIndex;
     }
-    return false;
+    else {
+        usedIndex.clear();
+    }
+
+    sf::Vector2f positionVector(positions[randomIndex].posx, positions[randomIndex].posy);
+    sprite.setPosition(positionVector);
 }
 
-sf::Vector2f Agent::getSize() const {
-    return sf::Vector2f(sprite.getGlobalBounds().width, sprite.getGlobalBounds().height);
+int Agent::eraseTimeAction(sf::Sound sonido[4]) {
+    //nada?
+    return 0;
 }
 
-sf::Vector2f Agent::getPosition() const {
-    return lastSpawnPosition;  // Devuelve la última posición de spawn
+int Agent::clickAction(sf::Sound sonido[5]) {
+    std::cout << "Agent";
+    return 0;
 }
