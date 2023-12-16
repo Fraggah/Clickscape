@@ -11,3 +11,4 @@ public:
 	void setTexture();
 };
 
+//no llegué a implementar explociones ecuando los bombas rojas explotan..

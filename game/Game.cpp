@@ -15,12 +15,18 @@ Game::~Game() {
 
 void Game::run() {
 	//Start
-
+	// 
+	//Cargas
 	if (!music.openFromFile("./sounds/theme.ogg"));
+	if (!trap.openFromFile("./sounds/trap.ogg"));
 	if (!menuMusic.openFromFile("./sounds/menu.ogg"));
 	if (!tmenu.loadFromFile("./assets/player1.png"));
-
 	if (!tmenu2.loadFromFile("./assets/player2.png"));
+	if (!textureMira.loadFromFile("./assets/player1.png"));
+	if (!textureMira2.loadFromFile("./assets/player2.png"));
+	if (!tlmao.loadFromFile("./assets/trap.png"));
+
+	//Menu... deberia ir en interfaz, no llego a pasarlo
 	smenu.setTexture(tmenu);
 	smenu.setScale(0.3f, 0.3f);
 	smenu2.setTexture(tmenu2);
@@ -30,21 +36,17 @@ void Game::run() {
 	smenu.setOrigin((size.x / 2) + 20, (size.y / 2) + 20);
 	smenu2.setOrigin((size2.x / 2), (size2.y / 2));
 
+	lmao.setTexture(tlmao);
 
-	smenu.setPosition((window.getSize().x) / 2, (window.getSize().y) / 2);
-	smenu2.setPosition(((window.getSize().x) / 2) - 20, ((window.getSize().y) / 2) - 22);
-
-	if (!textureMira.loadFromFile("./assets/player1.png"));
-
-	if (!textureMira2.loadFromFile("./assets/player2.png"));
-
+	//Shaders
 	sf::RectangleShape lv1rect(sf::Vector2f(1920, 1080));
+	sf::RectangleShape lv2rect(sf::Vector2f(window.getSize()));
+	sf::RectangleShape lv3rect(sf::Vector2f(window.getSize()));
 
-
+	
 	if (!bshader.loadFromFile("./shaders/bshader.frag", sf::Shader::Fragment)) {
 		std::cout << "Error al cargar el shader" << std::endl;
 	}
-
 
 	if (!sbshader.loadFromFile("./shaders/startbshader.frag", sf::Shader::Fragment)) {
 		std::cout << "Error al cargar el shader" << std::endl;
@@ -54,23 +56,19 @@ void Game::run() {
 		std::cout << "Error al cargar el shader" << std::endl;
 	}
 
-
-	sf::RectangleShape lv2rect(sf::Vector2f(window.getSize()));
-	sf::RectangleShape lv3rect(sf::Vector2f(window.getSize()));
-
-
-	sf::Texture texture;
-	if (!texture.loadFromFile("./assets/player1.png"));
-
+	//Instancias
 	Enemy enemy;
-	Level level;
-	level.setSounds();
+	Level level;	
 	Interface interface;
 	Crosshair crosshair(textureMira, textureMira2);
-
-
 	ParticleSystem particleSystem;
 
+	//seteo
+	interface.setFont();
+	interface.setLifes(tmenu);
+	level.setSounds();
+
+	//Titulo... deberia ir en interfaz, pero no llego XD
 	font.loadFromFile("./assets/Prompt-Regular.ttf");
 	text.setFont(font);
 	text.setString("Clickscape");
@@ -85,13 +83,24 @@ void Game::run() {
 				window.close();
 		}
 		
-		// Menu
+		sf::Time elapsed = clock.getElapsedTime();
+
+		// Enlace de Uniform Shaders
 		sbshader.setUniform("u_time", clock.getElapsedTime().asSeconds());
 		sbshader.setUniform("u_resolution", sf::Glsl::Vec2(window.getSize().x, window.getSize().y));
+		bshader.setUniform("u_time", elapsed.asSeconds());
+		bshader.setUniform("u_resolution", sf::Vector2f(1920, 1080));
+		lv3shader.setUniform("time", elapsed.asSeconds());
+		lv3shader.setUniform("resolution", sf::Vector2f(1920, 1080));
+
+		//Menu
 		if (ismenu) {
+			smenu.setPosition((window.getSize().x) / 2, (window.getSize().y) / 2);
+			smenu2.setPosition(((window.getSize().x) / 2) - 20, ((window.getSize().y) / 2) - 22);
+
 			if (event.type == sf::Event::MouseButtonPressed) {
 				sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-				if (smenu.getGlobalBounds().contains(mousePos.x, mousePos.y)); {
+				if (smenu.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
 					ismenu = false;
 					isgame = true;
 					music.play();
@@ -105,11 +114,6 @@ void Game::run() {
 		if (isgame)
 		{
 			window.setMouseCursorVisible(false);
-			sf::Time elapsed = clock.getElapsedTime();
-			bshader.setUniform("u_time", elapsed.asSeconds());
-			bshader.setUniform("u_resolution", sf::Vector2f(1920, 1080));
-			lv3shader.setUniform("time", elapsed.asSeconds());
-			lv3shader.setUniform("resolution", sf::Vector2f(1920, 1080));
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 			particleSystem.emitParticles(mousePos, particleSystem.randomColor());
 			particleSystem.update();
@@ -130,9 +134,53 @@ void Game::run() {
 			level.deleteAtTime();
 			interface.setText(level.points, level.lifes);
 			level.levelUp();
+
+			if (level.lifes == 0) {
+				isgame = false;
+				isend = true;
+			}
+			if (cflash.getElapsedTime() > sf::seconds(120)){
+				isgame = false;
+				notend = true;
+			}
+
 		}
 
-		window.clear();		
+		if (isend) {
+			window.setMouseCursorVisible(true);
+			music.stop();
+			menuMusic.play();
+			interface.setGameover(level.points);
+			smenu.setPosition(980, 700);
+			smenu2.setPosition(960, 680);
+			if (event.type == sf::Event::MouseButtonPressed) {
+				sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+				if (smenu.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+					isend = false;
+					isgame = true;
+					music.play();
+					level.reset();
+					cflash.restart();
+				}
+			}
+		}
+
+		if (notend) {
+			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+			particleSystem.emitParticles(mousePos, particleSystem.randomColor());
+			particleSystem.update();
+			crosshair.updatePosition(window, elapsed.asSeconds());
+			eyestext.setFont(font);
+			eyestext.setString("NO DEBERIAS ESTAR AQUI...");
+			eyestext.setCharacterSize(150);
+			if (cflash.getElapsedTime() > sf::seconds(125)) {
+				trap.play();
+			}
+		}
+
+		//Dibujado
+
+		window.clear();
 
 		if (cflash.getElapsedTime() < lvtime) {
 			window.draw(lv1rect, &sbshader);
@@ -159,6 +207,22 @@ void Game::run() {
 			window.draw(crosshair.sprite);
 			interface.draw(window);
 		}
+		if (isend) {
+			interface.drawFinal(window);
+			window.draw(smenu2);
+			window.draw(smenu);
+		}
+
+		if (notend) {
+			if (cflash.getElapsedTime() > sf::seconds(125)) {
+				window.draw(lmao);
+			}
+			particleSystem.draw(window);
+			window.draw(crosshair.sprite2);
+			window.draw(crosshair.sprite);
+			window.draw(eyestext);
+		}
+
 		window.display();
 	}
 }

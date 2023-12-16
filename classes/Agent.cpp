@@ -2,8 +2,8 @@
 #include <iostream>
 
 Agent::Agent() {
-    std::srand(static_cast<unsigned>(std::time(0)));
-    usedIndex.clear();
+    std::srand(static_cast<unsigned>(std::time(0)));  //Intento de no repetir posiciones seguidas pero no funcionó (IA)
+    usedIndex.clear();                                //Lo solucioné cambiando la logica de aparicion de elementos
     randomIndex = std::rand() % positions.size();
     usedIndex.insert(randomIndex);
 }

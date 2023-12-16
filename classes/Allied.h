@@ -1,6 +1,5 @@
 #pragma once
-#ifndef ALLIED_H
-#define ALLIED_H
+
 #include "Agent.h"
 #include <SFML/Audio.hpp>
 
@@ -12,4 +11,3 @@ public:
     virtual int eraseTimeAction(sf::Sound sonido[5]) override;
     virtual int clickAction(sf::Sound sonido[5]) override;
 };
-#endif

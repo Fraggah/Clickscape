@@ -1,6 +1,5 @@
 #pragma once
-#ifndef ENEMY_H
-#define ENEMY_H
+
 #include "Agent.h"
 #include "Explosion.h"
 #include <SFML/Graphics.hpp>
@@ -20,4 +19,3 @@ private:
     std::vector<Explosion*> explosions;
 };
 
-#endif

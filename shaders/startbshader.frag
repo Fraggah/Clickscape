@@ -23,3 +23,7 @@ void main() {
 
     gl_FragColor = vec4(color, 1.0);
 }
+
+//Decidí implemetar shaders de fondos, ya que es algo que me interesa y estuve indagando bastante
+//Intenté implementar un filtro que capture la salida de SFML y aplicarle al output un efecto CRT
+//pero fracasé miserablemente...

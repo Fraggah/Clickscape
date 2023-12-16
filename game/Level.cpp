@@ -79,18 +79,18 @@ void Level::deleteAtTime() {
 }
 
 void Level::deleteAgent(const sf::Event& event, const sf::RenderWindow& window) {
-	float expansion = 50.0f; //agrando la zona de deteccion del click
+	float expansion = 50.0f; //agrando la zona de deteccion del click  IA
 
 	for (auto it = agents.begin(); it != agents.end(); ++it) {
 		if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 			sf::FloatRect bounds = (*it)->sprite.getGlobalBounds();
-			bounds.left -= expansion;
-			bounds.top -= expansion;
-			bounds.width += 2 * expansion;
-			bounds.height += 2 * expansion;
+			bounds.left -= expansion;  //IA
+			bounds.top -= expansion;  //IA
+			bounds.width += 2 * expansion;  //IA
+			bounds.height += 2 * expansion;  //IA
 
-			if (bounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
+			if (bounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {  //static_cast implementado por IA
 				int suma = (*it)->clickAction(kill);
 				points += suma;
 				delete* it;
@@ -109,8 +109,20 @@ void Level::levelUp() {
 	}
 }
 
+void Level::reset() {
+	lifes = 3;
+	points = 0;
+	levTime = 3;
+	agents.clear();
+	enemies.clear();
+	allies.clear();
+	lUp.restart();
+}
+
 void Level::draw(sf::RenderWindow& window) {
 	for (const auto& a : this->agents) {
 		window.draw(a->sprite);
 	}
 }
+
+// la clase level se encarga de las acciones de crear enemigos, y aliados, maneja los puntos, vida y dificultad

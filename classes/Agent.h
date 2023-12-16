@@ -1,6 +1,5 @@
 #pragma once
-#ifndef AGENT_H
-#define AGENT_H
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <vector>
@@ -32,4 +31,3 @@ public:
     virtual int clickAction(sf::Sound sonido[5]);
 };
 
-#endif 
