@@ -134,6 +134,7 @@
     <ClCompile Include="classes\Agent.cpp" />
     <ClCompile Include="classes\Crosshair.cpp" />
     <ClCompile Include="classes\Enemy.cpp" />
+    <ClCompile Include="classes\Explosion.cpp" />
     <ClCompile Include="game\Game.cpp" />
     <ClCompile Include="game\Level.cpp" />
     <ClCompile Include="game\Interface.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="classes\Agent.h" />
     <ClInclude Include="classes\Crosshair.h" />
     <ClInclude Include="classes\Enemy.h" />
+    <ClInclude Include="classes\Explosion.h" />
     <ClInclude Include="game\Game.h" />
     <ClInclude Include="classes\ParticleSystem.h" />
     <ClInclude Include="game\Menu.h" />

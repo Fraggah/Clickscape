@@ -4,11 +4,9 @@
 #include "../classes/ParticleSystem.h"
 #include "../classes/Crosshair.h"
 #include "../classes/Agent.h"
-#include <SFML/Audio.hpp>
-#include "SFML/Graphics.hpp"
 #include <iostream>
 
-Game::Game() : window(sf::VideoMode(1920, 1080), "Game") {
+Game::Game() : window(sf::VideoMode(1920, 1080), "Clickscape") {
 	window.setFramerateLimit(60);
 }
 
@@ -18,14 +16,10 @@ Game::~Game() {
 void Game::run() {
 	//Start
 
-	sf::Music music;
 	if (!music.openFromFile("./sounds/theme.ogg"));
-
-	sf::Sprite smenu;
-	sf::Texture tmenu;
+	if (!menuMusic.openFromFile("./sounds/menu.ogg"));
 	if (!tmenu.loadFromFile("./assets/player1.png"));
-	sf::Sprite smenu2;
-	sf::Texture tmenu2;
+
 	if (!tmenu2.loadFromFile("./assets/player2.png"));
 	smenu.setTexture(tmenu);
 	smenu.setScale(0.3f, 0.3f);
@@ -40,50 +34,49 @@ void Game::run() {
 	smenu.setPosition((window.getSize().x) / 2, (window.getSize().y) / 2);
 	smenu2.setPosition(((window.getSize().x) / 2) - 20, ((window.getSize().y) / 2) - 22);
 
-	sf::Texture textureMira;
 	if (!textureMira.loadFromFile("./assets/player1.png"));
 
-	sf::Texture textureMira2;
 	if (!textureMira2.loadFromFile("./assets/player2.png"));
 
-	sf::RectangleShape background(sf::Vector2f(1920, 1080));
+	sf::RectangleShape lv1rect(sf::Vector2f(1920, 1080));
 
-	sf::Shader bshader;
+
 	if (!bshader.loadFromFile("./shaders/bshader.frag", sf::Shader::Fragment)) {
 		std::cout << "Error al cargar el shader" << std::endl;
 	}
 
-	sf::Shader sbshader;
+
 	if (!sbshader.loadFromFile("./shaders/startbshader.frag", sf::Shader::Fragment)) {
 		std::cout << "Error al cargar el shader" << std::endl;
 	}
 
-	sf::RectangleShape rect(sf::Vector2f(window.getSize()));
+	if (!lv3shader.loadFromFile("./shaders/lv3shader.frag", sf::Shader::Fragment)) {
+		std::cout << "Error al cargar el shader" << std::endl;
+	}
 
-	sf::Clock cflash;
-	sf::Time flashtime = sf::seconds(37.5);
+
+	sf::RectangleShape lv2rect(sf::Vector2f(window.getSize()));
+	sf::RectangleShape lv3rect(sf::Vector2f(window.getSize()));
+
 
 	sf::Texture texture;
 	if (!texture.loadFromFile("./assets/player1.png"));
 
+	Enemy enemy;
 	Level level;
+	level.setSounds();
 	Interface interface;
 	Crosshair crosshair(textureMira, textureMira2);
-	sf::Clock clock;
+
 
 	ParticleSystem particleSystem;
-
-	bool ismenu = true;
-	bool isgame = false;
-
-	sf::Font font;
-	sf::Text text;
 
 	font.loadFromFile("./assets/Prompt-Regular.ttf");
 	text.setFont(font);
 	text.setString("Clickscape");
 	text.setCharacterSize(50);
 	text.setPosition(825, 300);
+	menuMusic.play();
 
 	while (window.isOpen()) {  //Update
 		sf::Event event;
@@ -91,7 +84,7 @@ void Game::run() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-
+		
 		// Menu
 		sbshader.setUniform("u_time", clock.getElapsedTime().asSeconds());
 		sbshader.setUniform("u_resolution", sf::Glsl::Vec2(window.getSize().x, window.getSize().y));
@@ -102,6 +95,7 @@ void Game::run() {
 					ismenu = false;
 					isgame = true;
 					music.play();
+					level.lUp.restart();
 					cflash.restart();
 				}
 			}
@@ -114,12 +108,13 @@ void Game::run() {
 			sf::Time elapsed = clock.getElapsedTime();
 			bshader.setUniform("u_time", elapsed.asSeconds());
 			bshader.setUniform("u_resolution", sf::Vector2f(1920, 1080));
-
+			lv3shader.setUniform("time", elapsed.asSeconds());
+			lv3shader.setUniform("resolution", sf::Vector2f(1920, 1080));
 			sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 			particleSystem.emitParticles(mousePos, particleSystem.randomColor());
 			particleSystem.update();
 
-			if (spawn.getElapsedTime() > spawnTime) {
+			if (spawn.getElapsedTime() > sf::seconds(level.levTime)) {
 				int randomValue = std::rand() % 2;
 				if (randomValue == 0) {
 					level.createAllied();
@@ -134,19 +129,22 @@ void Game::run() {
 			level.deleteAgent(event, window);
 			level.deleteAtTime();
 			interface.setText(level.points, level.lifes);
+			level.levelUp();
 		}
 
+		window.clear();		
 
-		window.clear();
-
-
-		if (cflash.getElapsedTime() < flashtime) {
-			window.draw(rect, &sbshader);
+		if (cflash.getElapsedTime() < lvtime) {
+			window.draw(lv1rect, &sbshader);
 		}
 		else {
-			window.draw(background, &bshader);
+			window.draw(lv2rect, &bshader);
 		}
 
+		if (cflash.getElapsedTime() > lvtime2) {
+			window.draw(lv3rect, &lv3shader);
+		}
+		
 
 		if (ismenu) {
 			window.draw(text);
@@ -156,13 +154,11 @@ void Game::run() {
 		if (isgame) {
 			particleSystem.draw(window);
 			level.draw(window);
+			enemy.drawEnemyDestroy(window);
 			window.draw(crosshair.sprite2);
 			window.draw(crosshair.sprite);
 			interface.draw(window);
 		}
-
-
-
 		window.display();
 	}
 }

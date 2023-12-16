@@ -12,12 +12,14 @@ void Allied::setTexture(sf::Texture& alliedTexture) {
     sprite.setScale(0.7, 0.7);
 }
 
-void Allied::eraseTimeAction(int lifes) {
+int Allied::eraseTimeAction(sf::Sound sonido[5]) {
     //nada
+    return 0;
 }
 
-int Allied::clickAction() {
+int Allied::clickAction(sf::Sound sonido[5]) {
     int points = -100;
     std::cout << "Ally";
+    sonido[3].play();
     return points;
 }

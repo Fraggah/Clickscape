@@ -33,11 +33,12 @@ void Agent::setPositions() {
     sprite.setPosition(positionVector);
 }
 
-void Agent::eraseTimeAction(int lifes) {
+int Agent::eraseTimeAction(sf::Sound sonido[4]) {
     //nada?
+    return 0;
 }
 
-int Agent::clickAction() {
+int Agent::clickAction(sf::Sound sonido[5]) {
     std::cout << "Agent";
     return 0;
 }

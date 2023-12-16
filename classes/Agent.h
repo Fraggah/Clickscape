@@ -2,6 +2,7 @@
 #ifndef AGENT_H
 #define AGENT_H
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <vector>
 #include <unordered_set>
 #include <ctime>
@@ -27,8 +28,8 @@ public:
     virtual ~Agent();
     virtual void setTexture(sf::Texture& texture);
     void setPositions();
-    virtual void eraseTimeAction(int lifes);
-    virtual int clickAction();
+    virtual int eraseTimeAction(sf::Sound sonido[5]);
+    virtual int clickAction(sf::Sound sonido[5]);
 };
 
 #endif 
