@@ -15,3 +15,5 @@ void Explosion::setTexture() {
 	};
 	sprite.setTexture(texplosion);
 }
+
+//no llegué a implementar explociones ecuando los bombas rojas explotan..

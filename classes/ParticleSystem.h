@@ -16,3 +16,7 @@ public:
 private:
     std::vector<Particle> particles;
 };
+
+
+//Sistema de particulas creadas en base a estudio reciente que estube haciendo del uso de vectores y punteros...
+//Lo mismo que apliqué a los Agent, enemy y ally

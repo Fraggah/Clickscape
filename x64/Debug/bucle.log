@@ -1,2 +1,104 @@
-﻿  Level.cpp
+﻿  Game.cpp
+D:\Projects\bucle\game\Game.cpp(36,50): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(36,31): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(37,43): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(37,28): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(90,90): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(90,70): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(98,69): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(98,43): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(99,83): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(99,50): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+D:\Projects\bucle\game\Game.cpp(103,62): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(103,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(158,62): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(158,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Projects\bucle\game\Game.cpp(20,48): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(21,46): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(22,51): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(23,50): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(24,51): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(25,56): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(26,57): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+D:\Projects\bucle\game\Game.cpp(27,47): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
   bucle.vcxproj -> D:\Projects\bucle\x64\Debug\bucle.exe
